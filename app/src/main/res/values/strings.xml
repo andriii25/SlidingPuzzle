@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Sliding Puzzle</string>
+    <string name="new_game">New Game</string>
+    <string name="new_game_message">Are you sure you want to start a new game? You\'ll lose your current progress.</string>
+    <string name="win_game">You won!</string>
+    <string name="win_game_message">Congratulations, you won! Do you want to start a new game?</string>
+    <string name="help">Help</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="help_message">Sliding Puzzle\n\nYour goal is to place the pieces in the correct order, so the empty space is in
+        the bottom-right corner and the tiles are in order from 1-15 (from left to right and top to bottom)
+        \n\nCopyright \u00a9 2015 András Ottó Földes
+    </string>
+
+</resources>
