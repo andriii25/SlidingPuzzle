@@ -3,6 +3,8 @@ package com.fandras.slidingpuzzle;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Point;
+import android.util.TypedValue;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -44,6 +46,22 @@ public class MVCView
         blankPuzzlePieceParams.topMargin = tempTopMargin;
         blankPuzzlePiece.setLayoutParams(blankPuzzlePieceParams);
 
+    }
+
+    public void drawBoard(int[][] puzzlePieces)
+    {
+        for (int i = 0; i < puzzlePieces.length; i++)
+        {
+            for (int j = 0; j < puzzlePieces[i].length; j++)
+            {
+                PuzzlePieceView puzzlePiece = puzzleBoardLayout.getPuzzlePieceFromPosition(new Point(i, j));
+                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) puzzlePiece.getLayoutParams();
+                params.leftMargin = i * (puzzlePiece.padding + puzzlePiece.preferredSize);
+                params.topMargin = j * (puzzlePiece.padding + puzzlePiece.preferredSize);
+                puzzlePiece.setLayoutParams(params);
+
+            }
+        }
     }
 
     public AlertDialog.Builder newGameDialogBuilder()
@@ -95,4 +113,5 @@ public class MVCView
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
 }

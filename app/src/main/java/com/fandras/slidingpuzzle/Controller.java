@@ -85,9 +85,10 @@ public class Controller
             Random random = new Random();
             PuzzlePieceView randomPiece = (PuzzlePieceView) puzzleBoardLayout.getChildAt(random.nextInt(puzzleBoardLayout.getChildCount()));
             //Log.i("Controller/Shuffle", String.format("I: %d R: %s ; B: %s", i, randomPiece.getPosition().toString(), puzzleBoardLayout.getBlankPuzzlePiece().getPosition().toString()));
-            this.move(randomPiece, puzzleBoardLayout.getBlankPuzzlePiece());
+            model.move(randomPiece, puzzleBoardLayout.getBlankPuzzlePiece());
 
         }
+        mvcView.drawBoard(model.getPuzzlePieces());
     }
 
     private void move(PuzzlePieceView piecePressed, PuzzlePieceView blankPuzzlePiece)

@@ -14,6 +14,8 @@ public class PuzzlePieceView extends Button
     //Used for checking the win condition
     private int sequenceIndex;
     private Point position;
+    public final int preferredSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 64, getResources().getDisplayMetrics());
+    public final int padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
 
     public PuzzlePieceView(Context context, int sequenceIndex)
     {
